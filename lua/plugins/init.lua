@@ -1,7 +1,7 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
 
@@ -25,4 +25,36 @@ return {
   -- 		},
   -- 	},
   -- },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "vue",
+        "rust",
+        "toml",
+        "json",
+      },
+    },
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 }
